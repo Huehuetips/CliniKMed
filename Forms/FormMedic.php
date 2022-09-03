@@ -16,7 +16,7 @@
 			<h2>Agregar Médicos</h2>		
 			<h4>
 
-				<input type="text" name="Nombre_medico" maxlength="50" placeholder="Médico" required><br><br>				
+				<input type="text" name="Nombre_medico" maxlength="50" placeholder="Nombre" required><br><br>				
 				<input type="number" name="Id_especialidad" min="1" max="4"  placeholder="Especialidad" required><br><br>
 				<input type="text" name="Razon_social_medico" placeholder="Razón Social" required><br><br>
 
@@ -39,7 +39,7 @@
 				<input type="text" name="Direccion_medico" placeholder="Direccion" style="height: 100px;" required><br><br>
 
 				<br>Logo<br>
-				<input type="file" name="Logo_medico" id="file" accept=""><br><br>
+				<input type="file" name="Logo_medico" id="file" accept="image/jpg,image/jpeg,image/png"><br><br>
 
 				<br>
 				<button type="submit" id="submit" name="Submit_ins_med">Enviar</button>
