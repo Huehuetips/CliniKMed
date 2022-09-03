@@ -1,0 +1,24 @@
+create procedure SpCreaMedicos
+@tipo as char(5),
+@razonsocial varchar(100),
+@activo bit,
+@medico varchar(50),
+@email varchar(30),
+@telefono char(20),
+@sexo char(1),
+@idespecialidad smallint
+@logo varchar(100)=NULL,
+@colegiado varchar(15)=NULL,
+@direccion varchar(100)=NULL,
+as
+begin
+	if @tipo='InMed'
+	BEGIN
+		insert into medicos(razonsocial,activo,medico,email,logo,colegiado,direccion,telefono,sexo,idespecialidad)
+		values (@razonsocial,@activo,@medico,@email,@logo,@colegiado,@direccion,@telefono,@sexo,@idespecialidad)
+	END
+end
+
+
+
+--execute SpCreaMedicos 'InMed','Medicos Activos S.A.',1,'Doctor Simmy','Dr_simmy1@gmail.com','5555 5555','M',1,NULL,9999,'5A CALLE MI CASA ZONA 10'
