@@ -1,12 +1,32 @@
 			<!-- llama al encabezado -->	
-	<?php
-		include ('Styles\HEADER.html');
-	?>
+<?php
+	include ('Styles\HEADER.html');
+?>
 
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
 
 
 
 <body id="Formresp">
+
+
+	<script>
+		function enviar() {
+			var Nombre_medico= document.getElementalById('Nombre_medico').value;
+			var Id_especialidad= document.getElementalById('Id_especialidad').value;
+			var Razon_Social_medico= document.getElementalById('Razon_Social_medico').value;
+			var Email_medico= document.getElementalById('Email_medico').value;
+			var Colegiado_medico= document.getElementalById('Colegiado_medico').value;
+			var Telefono_medico= document.getElementalById('Telefono_medico').value;
+			var Sexo_medico= document.getElementalById('Sexo_medico').value;
+			var Activo_medico= document.getElementalById('Activo_medico').value;
+			var Direccion_medico= document.getElementalById('Direccion_medico').value;
+			var Logo_medico= document.getElementalById('Logo_medico').value;
+		}
+	</script>
 
 
 			<!-- Interfaz de formulario de Medicos-->
@@ -17,14 +37,9 @@
 			<h4>
 
 				<input type="text" name="Nombre_medico" maxlength="50" placeholder="Nombre" required><br><br>				
-				<input type="number" name="Id_especialidad" min="1" max="4"  placeholder="Especialidad" required><br><br>
+				<input type="number" name="Id_especialidad" min="1" max="4"  placeholder="Especialidad"><br><br>
 				<input type="text" name="Razon_social_medico" placeholder="Razón Social" required><br><br>
 
-				<select name="Activo_medico" required>
-					<option hidden selected value="">Activo</option>
-					<option value=1>Si</option>
-					<option value=0>No</option>
-				</select><br><br>
 				
 				<input type="email" name="Email_medico" placeholder="Email" required><br><br>
 				<input type="number" name="Colegiado_medico" minlength="4" placeholder="No. de Colegiado" required><br><br>
@@ -36,6 +51,12 @@
 					<option value="F">Femenino</option>
 				</select><br><br>
 				
+				<select name="Activo_medico" required>
+					<option hidden selected value="">Activo</option>
+					<option value=1>Si</option>
+					<option value=0>No</option>
+				</select><br><br>
+
 				<input type="text" name="Direccion_medico" placeholder="Direccion" style="height: 100px;" required><br><br>
 
 				<br>Logo<br>
@@ -45,13 +66,15 @@
 				<button type="submit" id="submit" name="Submit_ins_med">Enviar</button>
 			</h4>
 		</form>
+
+		<script type="text/javascript" src="../js/evitar_reenvio-js"></script>
 	
 
 
 			
 			<!--  envío y recepcion de datos a models/Get.model.php para conección y operaciones con bases de datos  -->
 	<?php
-		unset ($Submit_ins_med);
+
 		if (isset($_POST['Submit_ins_med'])) {
 				
 			$Nombre_medico = isset($_POST['Nombre_medico']) ? $_POST['Nombre_medico'] : "";
@@ -94,7 +117,9 @@
 			require_once "models/Insert.model.php";
 			$response =Ins_model::Ins_data($Id_especialidad,$Razon_social_medico,$Activo_medico,$Nombre_medico,$Email_medico,$Logo_medico,$Colegiado_medico,$Direccion_medico,$Sexo_medico,$Telefono_medico);
 			if ($response==true) {
+				
 				echo '<script>', 'alert("El registro ha sido ingresado con éxito");', '</script>';
+
 			}
 
 

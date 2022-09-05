@@ -12,16 +12,13 @@ class Connection {
 
         try {
 
-            $link = new PDO(
-                "sqlsrv:Server=$host,$port;database=$database", $user, $pass );
+            $link = new PDO("sqlsrv:Server=$host,$port;database=$database", $user, $pass );
 
-            } catch( PDOException $e )
+        } catch( PDOException $e ){
 
-            {
+            die( "Base de datos ". $database . "<br>" ."ERROR:".$e->getMessage() );
 
-                die( "Base de datos ". $database . "<br>" ."ERROR:".$e->getMessage() );
-
-            }
+        }
 
             return $link;
         }
