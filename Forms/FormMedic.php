@@ -1,46 +1,28 @@
-			<!-- llama al encabezado -->	
+<!DOCTYPE html>
+<!-- llama al encabezado -->	
 <?php
-	include ('Styles\HEADER.html');
+	nclude ('Styles\HEADER.html');
 ?>
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 
 
 
 <body id="Formresp">
 
-
-	<script>
-		function enviar() {
-			var Nombre_medico= document.getElementalById('Nombre_medico').value;
-			var Id_especialidad= document.getElementalById('Id_especialidad').value;
-			var Razon_Social_medico= document.getElementalById('Razon_Social_medico').value;
-			var Email_medico= document.getElementalById('Email_medico').value;
-			var Colegiado_medico= document.getElementalById('Colegiado_medico').value;
-			var Telefono_medico= document.getElementalById('Telefono_medico').value;
-			var Sexo_medico= document.getElementalById('Sexo_medico').value;
-			var Activo_medico= document.getElementalById('Activo_medico').value;
-			var Direccion_medico= document.getElementalById('Direccion_medico').value;
-			var Logo_medico= document.getElementalById('Logo_medico').value;
-		}
-	</script>
-
-
-			<!-- Interfaz de formulario de Medicos-->
+	<!-- Interfaz de formulario de Medicos-->
 
 	<center>
 		<form action="FormMedic.php" method="post" id="Form">	
 			<h2>Agregar Médicos</h2>		
 			<h4>
-
-				<input type="text" name="Nombre_medico" maxlength="50" placeholder="Nombre" required><br><br>				
+							<input type="text" name="Nombre_medico" maxlength="50" placeholder="Nombre" required><br><br>				
 				<input type="number" name="Id_especialidad" min="1" max="4"  placeholder="Especialidad"><br><br>
 				<input type="text" name="Razon_social_medico" placeholder="Razón Social" required><br><br>
 
-				
 				<input type="email" name="Email_medico" placeholder="Email" required><br><br>
 				<input type="number" name="Colegiado_medico" minlength="4" placeholder="No. de Colegiado" required><br><br>
 				<input type="mumber" name="Telefono_medico" maxlength="8" minlength="8" placeholder="Teléfono" required><br><br>
