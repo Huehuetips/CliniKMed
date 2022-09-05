@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- llama al encabezado -->    
 <?php
-    nclude('Styles\HEADER.html');
+    include('Styles\HEADER.html');
 ?>
 
 <head>
@@ -50,7 +50,6 @@
         </form>
 
         <script type="text/javascript" src="../JS/evitar_reenvio.js"></script>
-        <script type="text/javascript" src="../JS/evitar_reenvio.js"></script>
     
 
 
@@ -84,9 +83,9 @@
         }
         
             
-            /*============================
-                        Mostrar errores
-            ============================*/
+            /*==============================
+                     Mostrar errores
+            ==============================*/
 
         ini_set('display_error', 1);
         ini_set("log_errors", 1);
