@@ -8,18 +8,18 @@ body{
 	font-family: arial;
 }
 
-input{
-	width: 80%;
+/*input{
+	width: 50%;
 	border-radius: 5px;
 	border: 2px solid black;
 }
 
 select{
-	width: 80%;
+	width: 50.5%;
 	border-radius: 5px;
 	opacity: 5;
 	border: 2px solid black;
-}
+}*/
 
 nav{
 	background: rgb(204, 235, 255);
