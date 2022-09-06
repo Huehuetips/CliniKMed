@@ -12,20 +12,27 @@
 
 
 
-<body id="Formresp">
+<body id="Formresp" class="container">
 
     <!-- Interfaz de formulario de Medicos-->
 
     <center>
         <form action="FormMedic.php" method="post" id="Form">   
-            <h2>Agregar Médicos</h2>        
+            <h2>Agregar Médicos</h2>
+
+            <div class="container">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis nemo sunt ratione nihil, error deleniti voluptatibus maiores delectus dolore illo suscipit laborum, atque ipsam totam vero commodi repellat explicabo voluptates ipsum temporibus quos fugiat recusandae asperiores alias! Et laboriosam deleniti sit exercitationem, impedit sapiente dolores reprehenderit obcaecati iure sint sunt.</p>        
+            </div>
+            <div class="container-fluid">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, minima consequatur corrupti saepe vel? Alias ipsa quidem, earum neque optio obcaecati eveniet officiis, ipsum, accusantium nemo vitae quasi tempore. Corporis recusandae quae nemo doloremque, voluptas ratione mollitia, facilis in id unde, cupiditate repellendus, a reiciendis similique nihil alias deleniti illo.</p>
+            </div>
             <h4>
 
                             <!-- recordar colocar el autocomplete en off --> 
-                <input type="text" name="Nombre_medico" maxlength="50" placeholder="Nombre" required><br><br>             
-                <input type="number" name="Id_especialidad" min="1" max="4"  placeholder="Especialidad"><br><br>
-                <input type="text" name="Razon_social_medico" placeholder="Razón Social" required><br><br>
+                <input type="text" name="Nombre_medico" maxlength="50" placeholder="Nombre" required><br><br>  
+                <input type="text" name="Razon_social_medico" placeholder="Razón Social" required><br><br>        
 
+                <input type="number" name="Id_especialidad" min="1" max="4"  placeholder="Especialidad"><br><br>
                 <input type="email" name="Email_medico" placeholder="Email" required><br><br>
                 <input type="number" name="Colegiado_medico" minlength="4" placeholder="No. de Colegiado" required><br><br>
                 <input type="mumber" name="Telefono_medico" maxlength="8" minlength="8" placeholder="Teléfono" required><br><br>
@@ -52,7 +59,7 @@
             </h4>
         </form>
 
-        <!-- <script type="text/javascript" src="../JS/evitar_reenvio.js"></script> -->
+        <script type="text/javascript" src="../JS/evitar_reenvio.js"></script>
     
 
 

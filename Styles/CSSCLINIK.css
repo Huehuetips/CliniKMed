@@ -1,8 +1,3 @@
-*{
-
-}
-
-
 body{
 	background: rgb(232, 255, 235);
 	font-family: arial;
@@ -11,7 +6,6 @@ body{
 input{
 	width: 50%;
 	border-radius: 5px;
-	border: 2px solid black;
 }
 
 select{
