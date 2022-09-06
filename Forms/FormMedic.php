@@ -53,7 +53,7 @@
             </h4>
         </form>
 
-        <script type="text/javascript" src="../JS/evitar_reenvio.js"></script>
+        <!-- <script type="text/javascript" src="../JS/evitar_reenvio.js"></script> -->
     
 
 
