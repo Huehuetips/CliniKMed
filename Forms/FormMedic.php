@@ -5,8 +5,8 @@
 ?>
 
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 
 
@@ -19,19 +19,23 @@
         <form action="FormMedic.php" method="post" id="Form">   
             <h2>Agregar Médicos</h2>        
             <h4>
-                            <input type="text" name="Nombre_medico" maxlength="50" placeholder="Nombre" required><br><br>               
-                <input type="number" name="Id_especialidad" min="1" max="4"  placeholder="Especialidad"><br><br>
+
+                           <!-- recordar colocar el autocomplete en off -->
+                
+
+                <input type="text" name="Nombre_medico" maxlength="50" placeholder="Nombre" required><br><br>               
+                <input type="number" name="Id_especialidad" min="1" max="4"  placeholder="Especialidad" autocomplete="off"><br><br>
                 <input type="text" name="Razon_social_medico" placeholder="Razón Social" required><br><br>
 
                 <input type="email" name="Email_medico" placeholder="Email" required><br><br>
-                <input type="number" name="Colegiado_medico" minlength="4" placeholder="No. de Colegiado" required><br><br>
-                <input type="mumber" name="Telefono_medico" maxlength="8" minlength="8" placeholder="Teléfono" required><br><br>
+                <input type="number" name="Colegiado_medico" min="0000" max="9999" placeholder="No. de Colegiado" required><br><br>
+                <input type="number" name="Telefono_medico" max="99999999" min="00000000" placeholder="Teléfono" required><br><br>
                 
                 <select name="Sexo_medico" required>
                     <option hidden selected value="">Sexo</Sexo>
                     <option value="M">Masculino</option>
                     <option value="F">Femenino</option>
-                </select><br><br>
+                </select> <br><br>
                 
                 <select name="Activo_medico" required>
                     <option hidden selected value="">Activo</option>
