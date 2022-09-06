@@ -22,8 +22,7 @@
             <h4>
 
                             <!-- recordar colocar el autocomplete en off --> 
-
-                <input type="text" name="Nombre_medico" maxlength="50" placeholder="Nombre" required><br><br>               
+                <input type="text" name="Nombre_medico" maxlength="50" placeholder="Nombre" required><br><br>             
                 <input type="number" name="Id_especialidad" min="1" max="4"  placeholder="Especialidad"><br><br>
                 <input type="text" name="Razon_social_medico" placeholder="Razón Social" required><br><br>
 

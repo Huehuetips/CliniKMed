@@ -8,7 +8,7 @@ body{
 	font-family: arial;
 }
 
-/*input{
+input{
 	width: 50%;
 	border-radius: 5px;
 	border: 2px solid black;
@@ -19,7 +19,7 @@ select{
 	border-radius: 5px;
 	opacity: 5;
 	border: 2px solid black;
-}*/
+}
 
 nav{
 	background: rgb(204, 235, 255);
