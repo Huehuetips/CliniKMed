@@ -10,7 +10,7 @@
         <link rel="stylesheet" type="text/css" href="Styles/bootstrap-5.2.0-dist/css/bootstrap.css">
 
 
-        <!-- <link rel="stylesheet" type="text/css" href="Styles\CSSCLINIK.css"> -->
+        <link rel="stylesheet" type="text/css" href="Styles\CSSCLINIK.css">
 
 
     </head>

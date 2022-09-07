@@ -12,51 +12,89 @@
 
 
 
-<body id="Formresp" class="container">
+<body id="Formresp">
 
     <!-- Interfaz de formulario de Medicos-->
-
     <center>
-        <form action="FormMedic.php" method="post" id="Form">   
-            <h2>Agregar Médicos</h2>
-
+        <form action="FormMedic.php" method="post" id="Form" >   
             <div class="container">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis nemo sunt ratione nihil, error deleniti voluptatibus maiores delectus dolore illo suscipit laborum, atque ipsam totam vero commodi repellat explicabo voluptates ipsum temporibus quos fugiat recusandae asperiores alias! Et laboriosam deleniti sit exercitationem, impedit sapiente dolores reprehenderit obcaecati iure sint sunt.</p>        
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div style="margin: 10px;">
+                            NOMBRE<br>
+                            <input type="text" class="form-control" name="Nombre_medico" maxlength="50"  required>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div style="margin: 10px;">
+                            RAZON SOCIAL<br>
+                            <input type="text" class="form-control" name="Razon_social_medico" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div style="margin: 10px;">
+                            ESPECIALIDAD <br>
+                            <select name="Activo_medico" class="form-control" style="height: 30px;" required>
+                                <option hidden selected value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div style="margin: 10px;">
+                            EMAIL <br>
+                            <input type="email" class="form-control" name="Email_medico" required>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div style="margin: 10px;">
+                            NUMERO DE COLEGIADO<br>
+                            <input type="number" name="Colegiado_medico" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div style="margin: 10px;">
+                            NUMERO DE TELEFONO <br>
+                            <input type="mumber" name="Telefono_medico" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div style="margin: 10px;">
+                            SEXO <br>
+                            <select name="Sexo_medico" class="form-control" required>
+                                <option hidden selected value=""></Sexo>
+                                <option value="M">Masculino</option>
+                                <option value="F">Femenino</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div style="margin: 10px;">
+                            ACTIVO <br>
+                            <select name="Activo_medico" class="form-control" required>
+                                <option value=1>Si</option>
+                                <option value=0>No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div style="margin: 10px;">
+                            LOGO<br>
+                            <input type="file" name="Logo_medico" class="form-control" id="file" accept="image/jpg,image/jpeg,image/png">
+                        </div>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <center>
+                        <button type="submit" id="submit" name="Submit_ins_med" class="btn btn-dark btn-sm" style="width: 90px; height: 45px;">Enviar</button>
+                    </center>
+                </div>
+                <br> 
             </div>
-            <div class="container-fluid">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, minima consequatur corrupti saepe vel? Alias ipsa quidem, earum neque optio obcaecati eveniet officiis, ipsum, accusantium nemo vitae quasi tempore. Corporis recusandae quae nemo doloremque, voluptas ratione mollitia, facilis in id unde, cupiditate repellendus, a reiciendis similique nihil alias deleniti illo.</p>
-            </div>
-            <h4>
-
-                            <!-- recordar colocar el autocomplete en off --> 
-                <input type="text" name="Nombre_medico" maxlength="50" placeholder="Nombre" required><br><br>  
-                <input type="text" name="Razon_social_medico" placeholder="Razón Social" required><br><br>        
-
-                <input type="number" name="Id_especialidad" min="1" max="4"  placeholder="Especialidad"><br><br>
-                <input type="email" name="Email_medico" placeholder="Email" required><br><br>
-                <input type="number" name="Colegiado_medico" minlength="4" placeholder="No. de Colegiado" required><br><br>
-                <input type="mumber" name="Telefono_medico" maxlength="8" minlength="8" placeholder="Teléfono" required><br><br>
-                
-                <select name="Sexo_medico" required>
-                    <option hidden selected value="">Sexo</Sexo>
-                    <option value="M">Masculino</option>
-                    <option value="F">Femenino</option>
-                </select><br><br>
-                
-                <select name="Activo_medico" required>
-                    <option hidden selected value="">Activo</option>
-                    <option value=1>Si</option>
-                    <option value=0>No</option>
-                </select><br><br>
-
-                <input type="text" name="Direccion_medico" placeholder="Direccion" style="height: 100px;" required><br><br>
-
-                <br>Logo<br>
-                <input type="file" name="Logo_medico" id="file" accept="image/jpg,image/jpeg,image/png"><br><br>
-
-                <br>
-                <button type="submit" id="submit" name="Submit_ins_med">Enviar</button>
-            </h4>
         </form>
 
         <script type="text/javascript" src="../JS/evitar_reenvio.js"></script>

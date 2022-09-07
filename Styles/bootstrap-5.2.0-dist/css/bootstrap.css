@@ -365,6 +365,7 @@ select {
 
 select {
   word-wrap: normal;
+  height: 30px;
 }
 select:disabled {
   opacity: 1;
@@ -2000,7 +2001,7 @@ progress {
   color: #212529;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #ced4da;
+  border: 1px solid black;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
