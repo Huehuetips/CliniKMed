@@ -155,6 +155,7 @@ body{
 	transition: 0.5s;
 }
  
+
 .nav-toggle{
 	font-size: 30px;
 	color: white;
@@ -163,6 +164,9 @@ body{
 	background: none;
 	border: none;
 	display: none;
+}
+.check:hover{
+	cursor: pointer;
 }
 
 @media (max-width: 992px){
@@ -196,7 +200,6 @@ body{
 		left: 100%;
 		transition: left 0.5s;
 	}
-
 	.header_menu ul li{
 		margin-top: 10px;
 	}

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <!-- llama al encabezado -->    
 <?php
-    include('Styles\HEADER.html');
+    include('Styles\HEADERV2.html');
 ?>
 
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 
 
@@ -16,9 +16,9 @@
               <!-- Interfaz de formulario de Medicos-->
               <!-- quitar el autocomplete -->
     
-    <form action="FormMedic.php" method="post" id="Form"style="width: 77%; float: left; min-height: 500px; border-right: 1px solid black; background-color: lightgrey;">   
+    <form action="FormMedic.php" method="post" id="Form">   
         <center>
-            <br><u><h3>AGREGAR MEDICOS</h3></u><br>
+            <u><h3 style="margin: 1rem;">REGISTRO DE MEDICOS</h3></u>
             <div class="container">
                 <div class="row">
 
@@ -36,11 +36,17 @@
                     </div>
                 </div>
                 <div class="row">
+                    <div class="col-lg-6">
+                        <div style="margin: 10px;">
+                            *<b>EMAIL</b> <br>
+                            <input type="email" class="form-control" name="Email_medico" required>
+                        </div>
+                    </div><br><br>
                     <div class="col-lg-3">
                         <div style="margin: 10px;">
 
                             <b>ESPECIALIDAD</b> <br>
-                            <select name="Activo_medico" class="form-control" style="height: 30px;">
+                            <select name="Activo_medico" class="form-control" style="height: 38px;">
                                 <option hidden selected value=""></option>
                             </select>
                         
@@ -48,10 +54,16 @@
                     </div><br><br>
                     <div class="col-lg-3">
                         <div style="margin: 10px;">
-                            *<b>EMAIL</b> <br>
-                            <input type="email" class="form-control" name="Email_medico" required>
+                            *<b>SEXO</b> <br>
+                            <select name="Sexo_medico" class="form-control" style="height: 38px;" required>
+                                <option hidden selected value=""></Sexo>
+                                <option value="M">Masculino</option>
+                                <option value="F">Femenino</option>
+                            </select>
                         </div>
                     </div><br><br>
+                </div>
+                <div class="row">
                     <div class="col-lg-3">
                         <div style="margin: 10px;">
                             *<b>NUMERO DE COLEGIADO</b><br>
@@ -63,46 +75,30 @@
                             *<b>NUMERO DE TELEFONO</b> <br>
                             <input type="number" name="Telefono_medico" class="form-control" required>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3">
-                        <div style="margin: 10px;">
-                            *<b>SEXO</b> <br>
-                            <select name="Sexo_medico" class="form-control" required>
-                                <option hidden selected value=""></Sexo>
-                                <option value="M">Masculino</option>
-                                <option value="F">Femenino</option>
-                            </select>
-                        </div>
-                    </div><br><br>
-                    <div class="col-lg-3">
-                        <div style="margin: 10px;">
-                            *<b>ACTIVO </b><br>
-                            <select name="Activo_medico" class="form-control" required>
-                                <option value=1 selected>Si</option>
-                                <option value=0>No</option>
-                            </select>
-                        </div>
                     </div><br><br>
                     <div class="col-lg-6">
                         <div style="margin: 10px;">
                             <b>LOGO</b><br>
                             <input type="file" name="Logo_medico" class="form-control" id="file" accept="image/jpg,image/jpeg,image/png">
                         </div>
+                    </div><br><br>
+                    <div class="col-lg-12">
+                        <div style="margin: 10px;">
+                            <b>DIRECCION</b><br>
+                            <input type="text" name="Direccion_medico" class="form-control" style="height: 40px;">
+                        </div>
                     </div>
                 </div><br><br>
                 <div class="row">
                     <center>
-                        <button type="submit" id="submit" name="Submit_ins_med" class="btn btn-dark btn-sm" style="width: 90px; height: 45px;">AGREGAR</button>
+                        <button type="submit" id="submit" name="Submit_ins_med" class="btn btn-dark btn-sm" style="width: 90px; height: 45px;">GUARDAR</button>
                     </center>
                 </div>
                 <br> 
             </div>
         </center>
     </form>
-
-    <aside>
+<!--     <aside>
         <nav id="aside">
             <div class="row">
                 <ul id="TITULO">
@@ -133,9 +129,9 @@
         
     </aside>
 
-    <div class="clearfix"></div>
+    <div class="clearfix"></div>-->
 
-    <footer>
+<!--     <footer>
 
         <div class="container-fluid">
             <div class="row">
@@ -156,7 +152,7 @@
                 </div>   
             </div>
         </div>
-    </footer>
+    </footer>  -->
 
 
     <script>
@@ -178,7 +174,7 @@ if (isset($_POST['Submit_ins_med'])) {
         
     $Razon_social_medico = isset($_POST['Razon_social_medico']) ? $_POST['Razon_social_medico'] : "";
         
-    $Activo_medico = isset($_POST['Activo_medico']) ? $_POST['Activo_medico'] : "";
+    $Activo_medico = 1;
         
     $Email_medico = isset($_POST['Email_medico']) ? $_POST['Email_medico'] : "";
         

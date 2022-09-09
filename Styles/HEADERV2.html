@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<script defer src="../index.js"></script>
+
 <body>
 	<header class="header">
 
@@ -58,3 +58,11 @@
 		</nav>
 	</header>
 </body>
+<script defer>
+	const button = document.querySelector(".nav-toggle")
+	const menu = document.querySelector(".nav-menu")
+
+	button.addEventListener("click", () =>{
+		menu.classList.toggle("header_menu_visible")
+	})
+</script>
