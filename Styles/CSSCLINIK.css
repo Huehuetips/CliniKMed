@@ -1,61 +1,83 @@
-/*body{
-	background: rgb(232, 255, 235);
-	font-family: arial;
-}
-
-input{
-	width: 50%;
-	border-radius: 5px;
+a{
+	text-decoration: none;
+	padding: 2px 1px 0;
+	display: inline-block;
+	line-height: 2;
 }
 
 
-nav{
-	background: rgb(204, 235, 255);
-}*/
+nav {
+	text-align: center;
+}
 
 select{
 	height: 30px;
 }
 
-nav ul li{
+aside{
+	float: left;
+	min-height: 500px;
+	width: 23%;
+	background-color: rgb(150, 200, 255);
+}
+
+
+footer{
+	background-color: rgb(0, 0, 60);
+	color: rgb(255, 255, 255);
+	padding: 15px;
+
+}
+
+body{
+	background-color: rgb(150, 200, 255);
+}
+
+#header ul li{
+	border-radius: 5px;
 	float: left;
 	list-style: none;
 	margin: 10px;
+	width: 150px;
+	background-color: rgb(0, 200, 255);
+	border: 1px solid black;
 }
 
-/*#submit{
-	border-radius: 15px;
-	background-color: rgb(0, 245, 245);
-	border-color: rgb(0, 245, 245);
-	padding: 8px 20px;
+#header ul li:hover{
+	 background-color: rgb(100, 170, 255);
 }
 
-
-#header{
+#header ul li a{
 	width: 100%;
-	background: lightgray;
-	margin: 0px auto;
-	border: 1px solid lightgray;
+}
+
+#aside ul li{
+	border-radius: 6px;
+	list-style: none;
+	margin: 10px;
+	background-color: rgb(0, 0, 0);
 
 }
 
-#Form{
+#aside ul li:hover {
+	 background-color: rgb(100, 150, 240);;
+}
+
+#aside ul li a{
+	color: white;
 	width: 100%;
-	background: skyblue;
-	margin: 0px auto;
-	border: 1px solid skyblue;
-
 }
-
 #TITULO{
 	margin: 0px;
 }
-
-#file{
-	width: 300px;
-}
+ 
+ .menuaside{
+ 	background-color: black;
+ 	display: inline-flex;
+ }
 
 
 .clearfix{
 	clear: both;
-}*/
+}
+
