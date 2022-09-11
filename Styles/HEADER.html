@@ -1,62 +1,68 @@
 <!DOCTYPE html>
+
 <body>
-	<div class="container-fluid text-center" style="background-color: rgb(100, 150, 200); margin-bottom: 0px;">
-		<h4 style="text-align: left;">	
-			CLINIKMED
-		</h4>
-		<section class="container">
-			<article>
-				<h1 id="TITULO" class="display-1">Clínica Médica Salud y Bienestar</h1><br>
-			</article>
-		</section>
-	</div>
+	<header class="header">
+
+	<!-- 	<div class="container-fluid text-center" style="background-color: rgb(100, 150, 200); margin-bottom: 0px;">
+			<h4 style="text-align: left;">	
+				CLINIKMED
+			</h4>
+			<section class="container">
+				<article>
+					<h1 id="TITULO" class="display-1">Clínica Médica Salud y Bienestar</h1><br>
+				</article>
+			</section>
+		</div> -->
 
 
-	<nav id="header">
-		<div class="container-fluid" style="background-color: rgb(135, 220, 235);">
-			<div class="container">
-				<div class="row">
-					<ul id="TITULO">
-						<li>
-							<a href="index.php">
-								<b>INICIO</b>
-							</a>
-						</li>
-						<li>
-							<a href="index.php">
-								<b>PACIENTES</b>
-							</a>
-						</li>
-						<li>
-							<a href="index.php">
-								<b>MEDICOS</b>
-							</a>
-						</li>
-						<li>
-							<a href="index.php">
-								<b>PATOLOGIAS</b>
-							</a>
-						</li>
-						<li>
-							<a href="index.php">
-								<b>RECETAS</b>
-							</a>
-						</li>
-						<li>
-							<a href="index.php">
-								<b>PRESENTACIONES</b>
-							</a>
-						</li>
-						<li>
-							<a href="index.php">
-								<b>CONSULTAS</b>
-							</a>
-						</li>
-
-					</ul>
-				</div>
-			</div>
-		</div>
-	</nav>
-	<div class="clearfix"></div>
+		<nav class="header_menu">
+			<a href="#" id="Logo">CLINIKMED</a>
+			<button class="nav-toggle" aria-label="abrir menú"><i class="fa-solid fa-bars"></i></button>
+			<ul class="nav-menu">
+				<li>
+					<a href="#">
+						<b>INICIO</b>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<b>PACIENTES</b>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<b>MEDICOS</b>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<b>PATOLOGIAS</b>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<b>RECETAS</b>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<b>PRESENTACIONES</b>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<b>CONSULTAS</b>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
 </body>
+<script defer>
+	const button = document.querySelector(".nav-toggle")
+	const menu = document.querySelector(".nav-menu")
+
+	button.addEventListener("click", () =>{
+		menu.classList.toggle("header_menu_visible")
+	})
+</script>

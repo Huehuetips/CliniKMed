@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- llama al encabezado -->    
 <?php
-    include('Styles\HEADERV2.html');
+    include('Styles\HEADER.html');
 ?>
 
 <head>

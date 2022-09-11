@@ -1,83 +1,134 @@
-a{
-	text-decoration: none;
-	padding: 2px 1px 0;
-	display: inline-block;
-	line-height: 2;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+*{
+	margin: 0;
 }
 
-
-nav {
-	text-align: center;
-}
-
-select{
-	height: 30px;
-}
-
-aside{
-	float: left;
-	min-height: 500px;
-	width: 23%;
-	background-color: rgb(150, 200, 255);
-}
-
-
-footer{
-	background-color: rgb(0, 0, 60);
-	color: rgb(255, 255, 255);
-	padding: 15px;
-
-}
 
 body{
-	background-color: rgb(150, 200, 255);
+	font-family: 'Roboto Condensed', sans-serif;
+	background-color: #e5e5f7;
+	background-image: radial-gradient(#444cf7 0.6000000000000001px, #e5e5f7 0.6000000000000001px);
+	background-size: 12px 12px;
+	min-height: 100vh;
+	padding: 90px 20px 0;
+}
+#Form{
+	background-color: lightgrey; 
+	margin: auto auto;
+	width: 90%;
+	max-width: 1000px;
+	padding: 4.5em 3 em;
+	border-radius: 15px;
+	box-shadow: 0 20px 40px -5px rgb(0, 0, 0,60%);
 }
 
-#header ul li{
-	border-radius: 5px;
-	float: left;
-	list-style: none;
-	margin: 10px;
-	width: 150px;
-	background-color: rgb(0, 200, 255);
-	border: 1px solid black;
+#Logo{
+	font-size: 30px;
+	height: 0px;
+	font-weight: bold;
+	padding: 0 40px;
+
 }
 
-#header ul li:hover{
-	 background-color: rgb(100, 170, 255);
-}
-
-#header ul li a{
+.header{
+	height: 80px;
+	background-color: rgb(0, 0, 100);
+	position: fixed;
 	width: 100%;
+	top: 0;
+	left: 0;
 }
 
-#aside ul li{
-	border-radius: 6px;
-	list-style: none;
-	margin: 10px;
-	background-color: rgb(0, 0, 0);
+.header_menu{
 
-}
-
-#aside ul li:hover {
-	 background-color: rgb(100, 150, 240);;
-}
-
-#aside ul li a{
-	color: white;
-	width: 100%;
-}
-#TITULO{
-	margin: 0px;
+	display: flex;
+	justify-content: space-between;
 }
  
- .menuaside{
- 	background-color: black;
- 	display: inline-flex;
- }
+.header_menu a{
+	color: white;
+	text-decoration: none;
 
-
-.clearfix{
-	clear: both;
 }
 
+.nav-menu{
+	margin-rigth: 40px;
+	display: flex;
+	list-style: none;
+
+}
+
+.header_menu ul li{
+	Font-size: 18px;
+	margin: 45px 10px;
+	width: max-content;
+	height: 10px;
+}
+ 
+.header_menu ul li:hover{
+	text-decoration: underline;
+	transition: 0.5s;
+}
+ 
+
+.nav-toggle{
+	font-size: 30px;
+	color: white;
+	height: 50px;
+	margin: 10px 0 0;
+	background: none;
+	border: none;
+	display: none;
+}
+.check:hover{
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 992px){
+	#Logo{
+		font-size: 25px;
+	}
+
+	.header{
+		height: 70px;
+	}
+
+
+
+	.header_menu a{
+		color: white;
+		text-decoration: none;
+
+	}
+
+	.nav-menu{
+		flex-direction: column;
+		background-color: rgb(75, 75, 95);
+		position: fixed;
+		top: 70px;
+		left: 0;
+		width: 100%;
+		align-items: center;
+		padding: 20px 0;
+		height: calc(100% - 70px);
+		overflow-y: auto;
+		left: 100%;
+		transition: left 0.5s;
+	}
+	.header_menu ul li{
+		margin-top: 10px;
+	}
+	.nav-toggle{
+		display: block;
+	}
+	.header_menu_visible {
+		left: 0;
+	}
+}
