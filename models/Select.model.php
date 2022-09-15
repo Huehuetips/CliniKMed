@@ -2,20 +2,18 @@
 
 require_once "Connection.php";
 
-class Ins_model
+class Sel_model
 {
 
-    public static function Ins_data($Id_especialidad, $Razon_social_medico, $Activo_medico, $Nombre_medico, $Email_medico, $Logo_medico, $Colegiado_medico, $Direccion_medico, $Sexo_medico, $Telefono_medico)
+    public static function Sel_data($TIPO_SELECT)
     {
 
-        $sql = "execute SpCreaMedicos 'InMed',$Id_especialidad,'$Razon_social_medico',$Activo_medico,'$Nombre_medico','$Email_medico',$Logo_medico,$Colegiado_medico,'$Direccion_medico',$Telefono_medico,'$Sexo_medico'";
+        $sql = " EXECUTE SpSelectTabla '$TIPO_SELECT'";
 
         $stmt = Connection::connect()->prepare($sql);
 
         $stmt -> execute();
 
-        echo ( $stmt );
-
-        return $stmt;
+        return $stmt -> fetchAll(PDO::FETCH_CLASS);
     }
 }

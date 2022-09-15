@@ -1,8 +1,10 @@
 <?php
 
-class Connection {
+class Connection
+{
 
-    static public function connect() {
+    public static function connect()
+    {
 
         $host = 'localhost';
         $database = 'CliniKMed';
@@ -11,15 +13,12 @@ class Connection {
         $port = 1433;
 
         try {
-
-            $link = new PDO("sqlsrv:Server=$host,$port;database=$database", $user, $pass );
-
-        } catch( PDOException $e ){
-
-            die( "Base de datos ". $database . "<br>" ."ERROR:".$e->getMessage() );
-
+            $link = new PDO("sqlsrv:Server=$host,$port;database=$database", $user, $pass);
+            $link->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (Exception $e) {
+            die("Base de datos ". $database . "<br>" ."ERROR:".$e->getMessage());
         }
 
             return $link;
-        }
     }
+}

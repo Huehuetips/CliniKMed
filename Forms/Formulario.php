@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <!-- llama al encabezado -->    
+
+
+
 <?php
+
     include('Styles\HEADER.html');
+
+
+    require_once "models\Select.model.php";
+    $especialidades_input =Sel_model::Sel_data("SelEsp");
+    $sexo_input = Sel_model::Sel_data("SelSex");
+
 ?>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-</head>
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 
 
 
@@ -45,20 +56,36 @@
                     <div class="col-lg-3">
                         <div style="margin: 10px;">
 
+                              
+
+
                             <b>ESPECIALIDAD</b> <br>
-                            <select name="Activo_medico" class="form-control" style="height: 38px;">
+                            <select name="Id_especialidad" class="form-control" style="height: 38px;">
                                 <option hidden selected value=""></option>
+
+                                <?php foreach ($especialidades_input as $Row_especialidades) {?>
+
+                                <option value="<?php echo $Row_especialidades->Id_especialidad ?>"><?php echo $Row_especialidades->Nombre_especialidad; ?></option>
+
+                                 <?php  } ?>
+
                             </select>
                         
+                       
                         </div>
                     </div><br><br>
                     <div class="col-lg-3">
                         <div style="margin: 10px;">
                             *<b>SEXO</b> <br>
                             <select name="Sexo_medico" class="form-control" style="height: 38px;" required>
-                                <option hidden selected value=""></Sexo>
-                                <option value="M">Masculino</option>
-                                <option value="F">Femenino</option>
+                                <option hidden selected value=""></option>
+
+                                <?php foreach ($sexo_input as $Row_sexo) {?>
+
+                                <option value="<?php echo $Row_sexo->Registro ?>"><?php echo $Row_sexo->Sexo; ?></option>
+
+                                 <?php  }?>
+
                             </select>
                         </div>
                     </div><br><br>
@@ -85,7 +112,8 @@
                     <div class="col-lg-12">
                         <div style="margin: 10px;">
                             <b>DIRECCION</b><br>
-                            <input type="text" name="Direccion_medico" class="form-control" style="height: 40px;">
+                            <textarea name="Direccion_medico" rows="2" class="form-control" required></textarea>
+                            <!-- <input type="text" name="Direccion_medico" class="form-control" style="height: 40px;"> -->
                         </div>
                     </div>
                 </div><br><br>
@@ -98,62 +126,6 @@
             </div>
         </center>
     </form>
-<!--     <aside>
-        <nav id="aside">
-            <div class="row">
-                <ul id="TITULO">
-                    <br>
-                    <li>
-                        <a href="index.php">
-                            AGREGAR
-                        </a>
-                    </li>
-                    <li>
-                        <a href="index.php">
-                            BUSCAR
-                        </a>
-                    </li>
-                    <li>
-                        <a href="index.php">
-                            MODIFICAR
-                        </a>
-                    </li>
-                    <li>
-                        <a href="index.php">
-                            ELIMINAR
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        
-    </aside>
-
-    <div class="clearfix"></div>-->
-
-<!--     <footer>
-
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-8">
-
-                    <h5>CONTACTO</h5>
-                    <h6 style="padding-top: 5px; padding-left: 20px;">Numero: 64868956</h6>        
-                    <h6 style="padding-left: 20px;">Correo: CliniKMed@CliniKMed.com</h6>
-                    
-                    <h5>TERMINOS Y CONDICIONES</h5>
-
-                    <h5>POLITICA DE PRIVACIDAD</h5>  
-                    <br><br>
-
-                </div> 
-                <div class="col-lg-4" style="text-align: justify-all;">
-                    Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Enim quo eaque exercitationem aspernatur vitae accusamus deleniti. Et distinctio hic assumenda odio adipisci nam error omnis obcaecati esse natus officiis ad rerum, blanditiis dicta sunt. Odit, deserunt! Adipisci qui iusto inventore omnis aperiam vel, praesentium at explicabo quae, tempore illum vero.
-                </div>   
-            </div>
-        </div>
-    </footer>  -->
-
 
     <script>
         if (window.history.replaceState) {
@@ -164,6 +136,8 @@
 
 </body>
         
+
+
         <!--  envío y recepcion de datos a models/Get.model.php para conección y operaciones con bases de datos  -->
 <?php
 
@@ -217,4 +191,4 @@ if (isset($_POST['Submit_ins_med'])) {
 
     return;
 }
-?>
+?> 
