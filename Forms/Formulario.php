@@ -1,23 +1,34 @@
 <!DOCTYPE html>
+
+<head>
+
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <script src="https://kit.fontawesome.com/6a50c4176b.js" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" type="text/css" href="../Styles/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../Styles/CSSCLINIK.css">
+</head>
+
+
 <!-- llama al encabezado -->    
 
 
 
 <?php
 
-    include('Styles\HEADER.html');
+    include('..\Styles\HEADER.html');
 
 
-    require_once "models\Select.model.php";
-    $especialidades_input =Sel_model::Sel_data("SelEsp");
-    $sexo_input = Sel_model::Sel_data("SelSex");
+    require_once "..\models\Select.model.php";
+    $especialidades_input =Sel_model::Sel_data("SelEsp", "");
+    $sexo_input = Sel_model::Sel_data("SelSex", "");
 
 ?>
 
 
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
 
@@ -27,7 +38,7 @@
               <!-- Interfaz de formulario de Medicos-->
               <!-- quitar el autocomplete -->
     
-    <form action="FormMedic.php" method="post" id="Form">   
+    <form action="Formulario.php" method="post" id="Form">   
         <center>
             <u><h3 style="margin: 1rem;">REGISTRO DE MEDICOS</h3></u>
             <div class="container">
@@ -182,7 +193,7 @@ if (isset($_POST['Submit_ins_med'])) {
                     Requerimientos
         ============================*/
 
-    require_once "models/Insert.model.php";
+    require_once "../models/Insert.model.php";
     $response =Ins_model::Ins_data($Id_especialidad, $Razon_social_medico, $Activo_medico, $Nombre_medico, $Email_medico, $Logo_medico, $Colegiado_medico, $Direccion_medico, $Sexo_medico, $Telefono_medico);
     if ($response==true) {
         echo '<script>', 'alert("El registro ha sido ingresado con éxito");', '</script>';
