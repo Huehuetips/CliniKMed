@@ -13,10 +13,16 @@
 
 
 <?php
+	@session_start();
+    @$varsesion = $_SESSION['usuario'];
+    if ($varsesion==NULL or $varsesion == "") {
+        include('../intromedic.php');
+        die(); 
+    }
+    include('Styles\HEADER.php');
+    echo "$varsesion";
 
-    include('..\Styles\HEADER.html');
-
-	require_once "..\models\Select.model.php";
+	require_once "models\Select.model.php";
     $medicos_select =Sel_model::Sel_data("SelMed","");
 
 ?>

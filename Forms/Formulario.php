@@ -18,11 +18,16 @@
 
 
 <?php
+    @session_start();
+    @$varsesion = $_SESSION['usuario'];
+    if ($varsesion==NULL or $varsesion == "") {
+        include('../intromedic.php');
+        die(); 
+    }
+    include('Styles\HEADER.php');
 
-    include('..\Styles\HEADER.html');
 
-
-    require_once "..\models\Select.model.php";
+    require_once "models\Select.model.php";
     $especialidades_input =Sel_model::Sel_data("SelEsp", "");
     $sexo_input = Sel_model::Sel_data("SelSex", "");
 

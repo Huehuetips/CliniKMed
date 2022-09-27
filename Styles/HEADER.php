@@ -62,10 +62,29 @@
 						<b>CONSULTAS</b>
 					</a>
 				</li>
+			
+				<li>
+					<form action="header.php" method="post">   
+						<button type="submit" id="cerrarsesion" name="cerrarsesion" style="">cerrar sesion</button>
+					</form>
+				</li>
 			</ul>
 		</nav>
 	</header>
 </body>
+
+<?php 
+
+if (isset($_POST['cerrarsesion'])) {
+	echo "sesion cerrada";
+
+	session_destroy();
+
+
+}
+
+?>
+
 <script defer>
 	const button = document.querySelector(".nav-toggle")
 	const menu = document.querySelector(".nav-menu")
