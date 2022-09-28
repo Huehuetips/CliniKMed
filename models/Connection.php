@@ -21,4 +21,8 @@ class Connection
 
             return $link;
     }
+
+    // public static function disconnect(){
+    //     $link = null;
+    // }
 }

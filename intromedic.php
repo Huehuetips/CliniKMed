@@ -18,7 +18,7 @@
 
                 <!-- Llama al formulario inicial -->
         <?php
-          if(!isset($_SESSION)) 
+        if(!isset($_SESSION)) 
         { 
             session_start(); 
         } 
@@ -29,46 +29,12 @@
 
     <body>
         
-        <form action="index.php" method="post" id="login">
+        <form action="" method="post" id="login">
             <center>
                 <u>
                     <h3 style="margin: 1rem">LOGIN</h3>
                 </u>
                     <div> <h5 style="color: red;">
-                        <?php 
-
-                        if (isset($_POST['Submit_log'])) {
-
-                            $user = isset($_POST['user']) ? $_POST['user'] : "";
-                            $password = isset($_POST['password']) ? $_POST['password'] : "";
-
-                            require_once "models\Select.model.php";
-                            $Validacion_login =Sel_model::Sel_data("SelLog", "$user");
-
-                            if (count($Validacion_login)>0) {
-                                
-                                if ($password==$Validacion_login[0]->Password_logins) {
-
-                                    $_SESSION['usuario'] = "$user";
-                                    
-                                    include 'Forms/Formulario.php';
-                                    die();
-
-                                }else{
-                                    echo "contraseña incorrecta, intente nuevamente";
-                                }
-
-
-                            }else{
-                                echo "no se encontro el usuario, intente nuevamente";
-                            }
-
-                        }
-
-
-                            
-
-                         ?> 
                     </h5></div>  
                 <div class="container">
                      <div style="margin: 10px;">

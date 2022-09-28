@@ -2,14 +2,13 @@
 include 'models/Connection.php';
 
 class User extends Connection{
-    private $nombre;
-    private $username;
+    private $User_login;
+    private $Password_logins;
 
 
     public function userExists($user, $pass){
-        $md5pass = md5($pass);
-        $query = $this->connect()->prepare('SELECT * FROM logins WHERE User_login = :user AND Password_logins = :pass');
-        $query->execute(['user' => $user, 'pass' => $pass]);
+        $query = $this->connect()->prepare("SELECT * from logins where User_login='$user' and Password_logins='$pass';");
+        $query->execute();
 
         if($query->rowCount()){
             return true;
@@ -19,17 +18,17 @@ class User extends Connection{
     }
 
     public function setUser($user){
-        $query = $this->connect()->prepare('SELECT * FROM logins WHERE User_login = :user');
-        $query->execute(['user' => $user]);
+        $query = $this->connect()->prepare("SELECT * from logins where User_login='$user';");
+        $query->execute();
         
         foreach ($query as $currentUser) {
-            $this->nombre = $currentUser['User_login'];
-            $this->usename = $currentUser['Password_logins'];
+            $this->User_login = $currentUser['User_login'];
+            $this->Password_logins = $currentUser['Password_logins'];
         }
     }
 
     public function getNombre(){
-        return $this->nombre;
+        return $this->User_login;
     }
 }
 

@@ -1,5 +1,8 @@
 <!DOCTYPE html>
+<?php
+    @session_start(); 
 
+?>
 <head>
 
         <script src="https://kit.fontawesome.com/6a50c4176b.js" crossorigin="anonymous"></script>
@@ -38,7 +41,7 @@
 				<li>
 					<b class="titulo">MEDICOS</b>
 					<ul class="submenu">
-						<li><a href="../Forms/Formulario.php">AGREGAR</a></li>
+						<li><a href="../index.php">AGREGAR</a></li>
 						<li><a href="../Forms/ConsultaMedicos.php">CONSULTAR</a></li>
 					</ul>
 				</li>
@@ -63,10 +66,10 @@
 					</a>
 				</li>
 			
-				<li>
-					<form action="header.php" method="post">   
-						<button type="submit" id="cerrarsesion" name="cerrarsesion" style="">cerrar sesion</button>
-					</form>
+				<li class="cerrar-sesion">
+					<a href="../includes/logout.php">
+						<b>CERRAR SESION</b>
+					</a>
 				</li>
 			</ul>
 		</nav>
@@ -76,9 +79,12 @@
 <?php 
 
 if (isset($_POST['cerrarsesion'])) {
-	echo "sesion cerrada";
+
+	echo "sesion cerrada".$_SESSION['usuario'];
 
 	session_destroy();
+	
+	echo "sesion cerrada".$_SESSION['usuario'];
 
 
 }
