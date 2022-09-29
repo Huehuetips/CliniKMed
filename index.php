@@ -11,15 +11,6 @@ if(isset($_SESSION['user'])){
     $user->setUser($userSession->getCurrentUser());
     include_once 'Forms/ConsultaMedicos.php';
 
-    
-
-
-
-
-
-
-    
-
 }else if(isset($_POST['user']) && isset($_POST['password'])){
     
     $userForm = $_POST['user'];

@@ -3,7 +3,9 @@
 class UserSession{
 
     public function __construct(){
-        session_start();
+        
+        @session_start();
+
     }
 
     public function setCurrentUser($user){
