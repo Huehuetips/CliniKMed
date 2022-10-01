@@ -27,22 +27,20 @@
 
 		<form action="../index.php" method="post">
 			<nav class="header_menu">
-				<a href="#" id="Logo">CLINIKMED</a>
+				<a href="../index.php" id="Logo">CLINIKMED</a>
 				<button class="nav-toggle" aria-label="abrir menú"><i class="fa-solid fa-bars"></i></button>
 				<ul class="nav-menu">
 					<li>
-						<a href="index.php">
-							<b>INICIO</b>
-						</a>
+						 <button type="submit" name="botheader" value="ini" ><b>INICIO</b></button>
 					</li>
 					<li>
-						<b class="titulo">PACIENTES</b>
+						<button type="submit" name="botheader" value="pac" ><b>PACIENES</b></button>
 					</li>
 					<li>
-						<b class="titulo">MEDICOS</b>
+						<b class="tituloshead">MEDICOS</b>
 						<ul class="submenu">
-							<li><a href="../index.php">AGREGAR</a></li>
-							<li><a href="../Forms/ConsultaMedicos.php">CONSULTAR</a></li>
+							<li><button type="submit" name="botheader" value="Ag_med" ><b>AGREGAR</b></button></li>
+							<li><button type="submit" name="botheader" value="Con_med" ><b>Consultar</b></button></li>
 						</ul>
 					</li>
 					<li>
@@ -77,21 +75,6 @@
 	</header>
 </body>
 
-<?php 
-
-if (isset($_POST['cerrarsesion'])) {
-
-	echo "sesion cerrada".$_SESSION['usuario'];
-
-	session_destroy();
-	
-	echo "sesion cerrada".$_SESSION['usuario'];
-
-
-}
-
-?>
-
 <script defer>
 	const button = document.querySelector(".nav-toggle")
 	const menu = document.querySelector(".nav-menu")
@@ -100,3 +83,26 @@ if (isset($_POST['cerrarsesion'])) {
 		menu.classList.toggle("header_menu_visible")
 	})
 </script>
+
+    <script>
+        if (window.history.replaceState) {
+            console.log("")
+            window.history.replaceState(null,null,window.location.href)
+        }
+    </script>
+
+
+
+<?php 
+
+
+if (isset($_POST['botheader'])) {
+    
+    $botheader = isset($_POST['botheader']) ? $_POST['botheader'] : "";
+	
+}
+
+
+
+
+ ?>

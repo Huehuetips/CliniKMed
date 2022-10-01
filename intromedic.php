@@ -22,14 +22,14 @@
         { 
             session_start(); 
         } 
-            include('Styles\HEADER.php');
+        include('Styles\HEADER.php');
 
         ?>
 
 
     <body>
         
-        <form action="" method="post" id="login">
+        <form action="intromedic.php" method="post" id="login">
             <center>
                 <u>
                     <h3 style="margin: 1rem">LOGIN</h3>
@@ -37,6 +37,7 @@
                     <div> <h5 style="color: red;">
                     </h5></div>  
                 <div class="container">
+
                      <div style="margin: 10px;">
                         <b>USUARIO</b><br>
                         <input type="text" class="form-control" name="user" malgength="50"  required>
@@ -45,6 +46,31 @@
                         <b>CONTRASEÑA</b><br>
                         <input type="password" class="form-control" name="password" malgength="50" required>
                     </div>  <br>
+                    <?php 
+
+                        if (isset($_POST['Submit_log'])) {
+                            $User = isset($_POST['user']) ? $_POST['user'] : "";
+                            $pass = isset($_POST['password']) ? $_POST['password'] : "";
+
+                            require_once "models\Select.model.php";
+                            $userquery =Sel_model::Sel_data("SelLog","$User","");
+                            if (empty($userquery)) {
+                                echo "USUARIO INCORRECTO, INTENTE NUEVAMENTE <br><br>";
+                            }else{
+
+                                foreach ($userquery as $rowlog) {
+                                    if ($rowlog->Password_logins==$pass) {
+                                        $_SESSION['user'] = $User;
+                                        include_once 'index.php';
+                                    }else{
+                                        echo "PASSWORD INCORRECTO, INTENTE NUEVAMENTE <br><br>";
+                                    }
+                                }
+                            }
+                        }
+
+
+                    ?>
                     <div>
                         <button type="submit" id="submit" name="Submit_log" class="btn btn-dark btn-sm" style="width: 90px; height: 45px;">INGRESAR</button>
                     </div>

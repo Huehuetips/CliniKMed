@@ -8,15 +8,15 @@ class Sel_model
     public static function Sel_data($TIPO_SELECT, $WHERE1, $WHERE2)
     {
 
-        if (!empty($WHERE)) {
-            $WHERE=", '"."$WHERE"."'";
+        if (!empty($WHERE1)) {
+            $WHERE1=", '"."$WHERE1"."'";
         }
         if (!empty($WHERE2)) {
             $WHERE2=", '"."$WHERE2"."'";
         }
  
 
-        $sql = " EXECUTE SpSelectTabla '$TIPO_SELECT' $WHERE $WHERE2 ";
+        $sql = " EXECUTE SpSelectTabla '$TIPO_SELECT' $WHERE1 $WHERE2 ";
 
         // echo $sql;
 
