@@ -18,11 +18,7 @@ class Connection
         } catch (Exception $e) {
             die("Base de datos ". $database . "<br>" ."ERROR:".$e->getMessage());
         }
-
-            return $link;
+        
+        return $link;
     }
-
-    // public static function disconnect(){
-    //     $link = null;
-    // }
 }

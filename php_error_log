@@ -1,0 +1,40 @@
+[11-Oct-2022 02:12:05 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near '.'. in C:\xampp\htdocs\CliniKMed\models\Insert.model.php:35
+Stack trace:
+#0 C:\xampp\htdocs\CliniKMed\models\Insert.model.php(35): PDOStatement->execute()
+#1 C:\xampp\htdocs\CliniKMed\Forms\InsertLaboratorios.php(97): Ins_model::Ins_lab('Baier', '65489321', 'asd\xC3\xB1lfkja\xC3\xB1sdl...', 'baier@gmail.com', '')
+#2 C:\xampp\htdocs\CliniKMed\index.php(31): include_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\CliniKMed\models\Insert.model.php on line 35
+[11-Oct-2022 02:15:23 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near '.'. in C:\xampp\htdocs\CliniKMed\models\Insert.model.php:37
+Stack trace:
+#0 C:\xampp\htdocs\CliniKMed\models\Insert.model.php(37): PDOStatement->execute()
+#1 C:\xampp\htdocs\CliniKMed\Forms\InsertLaboratorios.php(97): Ins_model::Ins_lab('Baier', '32198756', 'asdkfhalskdhj', 'baier@gmail.com', '')
+#2 C:\xampp\htdocs\CliniKMed\index.php(31): include_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\CliniKMed\models\Insert.model.php on line 37
+[11-Oct-2022 02:21:17 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near '.'. in C:\xampp\htdocs\CliniKMed\models\Insert.model.php:37
+Stack trace:
+#0 C:\xampp\htdocs\CliniKMed\models\Insert.model.php(37): PDOStatement->execute()
+#1 C:\xampp\htdocs\CliniKMed\Forms\InsertLaboratorios.php(97): Ins_model::Ins_lab('Baier', '35795146', '\xC3\xB1alskdjf\xC3\xB1laks...', 'baier@gmail.com', 'asdlkfjhasldkfh...')
+#2 C:\xampp\htdocs\CliniKMed\index.php(31): include_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\CliniKMed\models\Insert.model.php on line 37
+[11-Oct-2022 02:24:18 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near 'Email_laboratorio'. in C:\xampp\htdocs\CliniKMed\models\Insert.model.php:37
+Stack trace:
+#0 C:\xampp\htdocs\CliniKMed\models\Insert.model.php(37): PDOStatement->execute()
+#1 C:\xampp\htdocs\CliniKMed\Forms\InsertLaboratorios.php(97): Ins_model::Ins_lab('Baier', '35715946', 'asd\xC3\xB1lfkja\xC3\xB1sdl...', 'baier@gmail.com', 'alskdhjflaksdhj...')
+#2 C:\xampp\htdocs\CliniKMed\index.php(31): include_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\CliniKMed\models\Insert.model.php on line 37
+[11-Oct-2022 03:46:01 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SpPresentaciones'. in C:\xampp\htdocs\CliniKMed\models\Insert.model.php:54
+Stack trace:
+#0 C:\xampp\htdocs\CliniKMed\models\Insert.model.php(54): PDOStatement->execute()
+#1 C:\xampp\htdocs\CliniKMed\Forms\InsertPresentaciones.php(54): Ins_model::Ins_pres('a\xC3\xB1sdkjfdf')
+#2 C:\xampp\htdocs\CliniKMed\index.php(31): include_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\CliniKMed\models\Insert.model.php on line 54
+[13-Oct-2022 16:17:29 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "Update_model" not found in C:\xampp\htdocs\CliniKMed\Forms\EditaMedicos.php:178
+Stack trace:
+#0 C:\xampp\htdocs\CliniKMed\index.php(31): include_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\CliniKMed\Forms\EditaMedicos.php on line 178

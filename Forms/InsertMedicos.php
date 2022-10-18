@@ -1,35 +1,9 @@
-<!DOCTYPE html>
-
-<head>
-
-
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <script src="https://kit.fontawesome.com/6a50c4176b.js" crossorigin="anonymous"></script>
-
-        <link rel="stylesheet" type="text/css" href="../Styles/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="../Styles/CSSCLINIK.css">
-</head>
-
-
-<!-- llama al encabezado -->    
-
 
 
 <?php
-    @session_start();
-    @$varsesion = $_SESSION['usuario'];
-    if ($varsesion==NULL or $varsesion == "") {
-        include('../index.php');
-        die(); 
-    }
-    include('..\Styles\HEADER.php');
-
-
-    require_once "..\models\Select.model.php";
-    $especialidades_input =Sel_model::Sel_data("SelEsp", "","");
-    $sexo_input = Sel_model::Sel_data("SelSex", "","");
+    require_once "models\Select.model.php";
+    $especialidades_input =Select::Sel_mast_table("SelEsp", "","");
+    $sexo_input = Select::Sel_mast_table("SelSex", "","");
 
 ?>
 
@@ -38,12 +12,10 @@
 
 
 
-<body>
-
               <!-- Interfaz de formulario de Medicos-->
               <!-- quitar el autocomplete -->
-    
-    <form action="Formulario.php" method="post" id="Form">   
+<body>    
+    <form action="" method="post" id="Form">   
         <center>
             <u><h3 style="margin: 1rem;">REGISTRO DE MEDICOS</h3></u>
             <div class="container">
@@ -52,7 +24,7 @@
                     <div class="col-lg-6">
                         <div style="margin: 10px;">
                             *<b>NOMBRE</b><br>
-                            <input type="text" class="form-control" name="Nombre_medico" malgength="50"  required>
+                            <input type="text" class="form-control" name="Nombre_medico" maxlength="50" required>
                         </div>
                     </div><br>
                     <div class="col-lg-6">
@@ -76,7 +48,7 @@
 
 
                             <b>ESPECIALIDAD</b> <br>
-                            <select name="Id_especialidad" class="form-control" style="height: 38px;">
+                            <select name="Id_especialidad" class="form-control" style="height: 38px;" required>
                                 <option hidden selected value=""></option>
 
                                 <?php foreach ($especialidades_input as $Row_especialidades) {?>
@@ -110,7 +82,7 @@
                     <div class="col-lg-3">
                         <div style="margin: 10px;">
                             *<b>NUMERO DE COLEGIADO</b><br>
-                            <input type="number" name="Colegiado_medico" class="form-control" required>
+                            <input type="number" name="Colegiado_medico" class="form-control">
                         </div>
                     </div><br><br>
                     <div class="col-lg-3">
@@ -121,17 +93,10 @@
                     </div><br><br>
                     <div class="col-lg-6">
                         <div style="margin: 10px;">
-                            <b>LOGO</b><br>
-                            <input type="file" name="Logo_medico" class="form-control" id="file" accept="image/jpg,image/jpeg,image/png">
+                            <b>DIRECCION</b><br>
+                            <textarea name="Direccion_medico" rows="1" class="form-control" required></textarea>
                         </div>
                     </div><br><br>
-                    <div class="col-lg-12">
-                        <div style="margin: 10px;">
-                            <b>DIRECCION</b><br>
-                            <textarea name="Direccion_medico" rows="2" class="form-control" required></textarea>
-                            <!-- <input type="text" name="Direccion_medico" class="form-control" style="height: 40px;"> -->
-                        </div>
-                    </div>
                 </div><br><br>
                 <div class="row">
                     <center>
@@ -142,20 +107,13 @@
             </div>
         </center>
     </form>
-
-    <script>
-        if (window.history.replaceState) {
-            console.log("")
-            window.history.replaceState(null,null,window.location.href)
-        }
-    </script>
-
 </body>
-        
+
 
 
         <!--  envío y recepcion de datos a models/Get.model.php para conección y operaciones con bases de datos  -->
 <?php
+include('includes/nullrefresh.php'); // evita reenvío de formulario
 
 if (isset($_POST['Submit_ins_med'])) {
     $Nombre_medico = isset($_POST['Nombre_medico']) ? $_POST['Nombre_medico'] : "";
@@ -175,12 +133,7 @@ if (isset($_POST['Submit_ins_med'])) {
     $Sexo_medico = isset($_POST['Sexo_medico']) ? $_POST['Sexo_medico'] : "";
         
     $Direccion_medico = isset($_POST['Direccion_medico']) ? $_POST['Direccion_medico'] : "";
-        
-    $Logo_medico = isset($_POST['Logo_medico']) ? $_POST['Logo_medico'] :"";
-        
-    if (empty($Logo_medico)) {
-        $Logo_medico="null";
-    }
+ 
     if (empty($Id_especialidad)) {
         $Id_especialidad="null";
     }
@@ -192,14 +145,16 @@ if (isset($_POST['Submit_ins_med'])) {
 
     ini_set('display_error', 1);
     ini_set("log_errors", 1);
-    ini_set("error_log", "C:/xampp/htdocs/APIREST/php_error_log");
+    ini_set("error_log", "php_error_log");
 
         /*============================
                     Requerimientos
         ============================*/
 
-    require_once "../models/Insert.model.php";
-    $response =Ins_model::Ins_data($Id_especialidad, $Razon_social_medico, $Activo_medico, $Nombre_medico, $Email_medico, $Logo_medico, $Colegiado_medico, $Direccion_medico, $Sexo_medico, $Telefono_medico);
+    require_once "models/Insert.model.php";
+
+    $response =Ins_model::Ins_med($Id_especialidad, $Razon_social_medico, $Activo_medico, $Nombre_medico, $Email_medico, $Colegiado_medico, $Direccion_medico, $Sexo_medico, $Telefono_medico);
+
     if ($response==true) {
         echo '<script>', 'alert("El registro ha sido ingresado con éxito");', '</script>';
     }

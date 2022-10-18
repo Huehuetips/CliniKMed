@@ -3,17 +3,19 @@
 	margin: 0;
 }
 
-
+/*PAGINA COMPLETA*/
 body{
 	font-family: 'Roboto Condensed', sans-serif;
 	background-color: #e5e5f7;
-	background-image: radial-gradient(#444cf7 0.6000000000000001px, #e5e5f7 0.6000000000000001px);
-	background-size: 12px 12px;
+	background-image: url(../imgs/FONDO.JPG);
+	background-size: 750px 700px;
 	min-height: 100vh;
 	padding: 90px 20px 0;
 }
+
+/*FORMULARIOS*/
 #Form{
-	background-color: lightgrey; 
+	background: linear-gradient(to top, rgb(115, 115, 115) 10%, lightgrey);
 	margin: auto auto;
 	width: 90%;
 	max-width: 1000px;
@@ -22,6 +24,7 @@ body{
 	box-shadow: 0 20px 40px -5px rgb(0, 0, 0,60%);
 }
 
+/*FORMULARIO DE LOGIN*/
 #login{
 	background-color: lightgrey; 
 	margin: auto auto;
@@ -32,14 +35,19 @@ body{
 	box-shadow: 0 20px 40px -5px rgb(0, 0, 0,60%);
 }
 
+/*LOGO*/
 #Logo{
-	font-size: 30px;
-	height: 0px;
-	font-weight: bold;
-	padding: 0 40px;
+	/*font-size: 30px;*/
+	height: 80px;
+	width: 150px;
+	/*font-weight: bold;*/
+	/*padding: 0 40px;*/
 
 }
 
+
+
+/*ENCABEZADO*/
 .header{
 	height: 80px;
 	background-color: rgb(0, 0, 100);
@@ -54,7 +62,13 @@ body{
 	display: flex;
 	justify-content: space-between;
 }
- 
+
+ .nav-menu{
+	margin-rigth: 40px;
+	display: flex;
+	list-style: none;
+}
+
 .header_menu > a,
 .nav-menu > li > a,
 .nav-menu > li > button,
@@ -66,11 +80,7 @@ body{
 	border: none;
 }
 
-.nav-menu{
-	margin-rigth: 40px;
-	display: flex;
-	list-style: none;
-}
+
 
 .nav-menu > li{
 	Font-size: 18px;
@@ -83,12 +93,13 @@ body{
 	animation: 2s;
 }
  
+.nav-menu button :hover,
 .nav-menu > li > a :hover,
-.nav_menu > li > b :hover,
-.titulo:hover{
+.nav-menu li > b :hover,
+.titulo :hover{
 	padding-bottom: 3px;
 	text-decoration: underline;
-	transition: 0.5s;
+	/*transition: 0.5s;*/
 }
 .submenu{
 	display: none;
@@ -98,9 +109,7 @@ body{
 .submenu li{
 	list-style: none;
 }
-.submenu li button:hover{
-	text-decoration: underline;
-}
+
 .submenu button{
 	display: none;
 	font-size: 18px;
@@ -110,8 +119,12 @@ body{
 	display: block;
 	color: white;
 	border: none;
+	width: 130px;
 }
  
+.submenu button:hover{
+	text-decoration: underline;
+}
 
 .nav-toggle{
 	font-size: 30px;
@@ -124,23 +137,28 @@ body{
 }
 
 
+/*
+.fila{
+	background-color:#ffffcc;
+}
+.filaalterna{
+	background-color:#ffcc99;
+}
+.fdg_sortable {
+	cursor:pointer;text-decoration:underline;color:#00c;
+}*/
 
 
-
-
-
+/*DISPOSITIVOS MÓVILES*/
 @media (max-width: 992px){
+	/*LOGO*/
 	#Logo{
-		font-size: 25px;
-	}
-
-	.header{
 		height: 70px;
 	}
-	.header_menu a{
-		color: white;
-		text-decoration: none;
 
+	/*ENCABEZADO*/
+	.header{
+		height: 70px;
 	}
 
 	.nav-menu{
@@ -148,7 +166,6 @@ body{
 		background-color: rgb(75, 75, 95);
 		position: fixed;
 		top: 70px;
-		left: 0;
 		width: 100%;
 		align-items: center;
 		padding: 20px 0;
@@ -157,7 +174,7 @@ body{
 		left: 100%;
 		transition: left 0.5s;
 	}
-	.header_menu ul li{
+	.nav-menu li{
 		margin-top: 10px;
 	}
 	.nav-toggle{
@@ -166,7 +183,7 @@ body{
 	.header_menu_visible {
 		left: 0;
 	}
-	.submenu a{
+	.submenu button{
 		background-color: rgb(50, 50, 70);
 	}
 	.submenu{
