@@ -1,6 +1,6 @@
 <?php 
 	require_once "models\Select.model.php";
-    $medicos_select =Select::Sel_mast_table("SelMed","","");
+    $medicos_select =Select::Sel_med("Sel");
 
 ?>
               <!-- Interfaz de formulario de Medicos-->

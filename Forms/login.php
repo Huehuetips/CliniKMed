@@ -12,7 +12,7 @@
                     $pass = isset($_POST['password']) ? $_POST['password'] : "";
 
                     require_once "models\Select.model.php";
-                    $userquery =Select::Sel_mast_table("SelLog","$User","$pass");
+                    $userquery =Select::Sel_login("Sel","$User","$pass");
                     if (empty($userquery)) {
                         echo "USUARIO INCORRECTO, INTENTE NUEVAMENTE <br><br>";
                     }else{

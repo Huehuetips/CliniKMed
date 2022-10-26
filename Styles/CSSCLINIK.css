@@ -24,6 +24,11 @@ body{
 	box-shadow: 0 20px 40px -5px rgb(0, 0, 0,60%);
 }
 
+.button{
+	width: 90px;
+	height: 45px;
+}
+
 /*FORMULARIO DE LOGIN*/
 #login{
 	background-color: lightgrey; 
@@ -45,6 +50,16 @@ body{
 
 }
 
+.margin7{
+	margin-bottom: 7px;
+}
+
+.componentes{
+
+	border-bottom: 1px solid;
+	border-right: 1px solid;
+	border-top: 1px solid;
+}
 
 
 /*ENCABEZADO*/
@@ -147,6 +162,9 @@ body{
 .fdg_sortable {
 	cursor:pointer;text-decoration:underline;color:#00c;
 }*/
+
+
+
 
 
 /*DISPOSITIVOS MÓVILES*/

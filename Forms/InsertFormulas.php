@@ -1,57 +1,59 @@
 <?php 
     require_once "models\Select.model.php";
     require 'includes/DataGrid.php';
-    $Componentes_select =Select::Sel_mast_table("SelCom","","");
+    $Componentes_select =Select::Sel_Componentes("Sel");
+    $Medidas_select =Select::Sel_medidas("Sel");
+    // print_r($Componentes_select);
+    
+
+    if (isset($_POST['modify_form'])) {
+
+        $Nombre_formula = isset($_POST['Nombre_formula']) ? $_POST['Nombre_formula'] : "";
+
+        $_SESSION['Formula'][]="";
+          
+        print_r($_SESSION['Formula']);
+
+    }else{
+        
+        $_SESSION['Formula']=array();
+    }
+
 
 ?>
-              <!-- Interfaz de formulario de Medicos-->
-              <!-- quitar el autocomplete -->
-    
-<form action="" method="post" id="Form">   
+
+<div class="container" id="Form" >
     <center>
         <u><h3 style="margin: 1rem;">FORMULAS</h3></u>
         <div class="container">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <td><b>COMPONENTE</b></td>
-                        <td><b>CONCENTRACION</b></td>
-                        <td><b>AGREGAR A FORMULA</b></td>
-                        
-                        
-                    </tr>
-                </thead>
-                <tbody>
+            <!-- <div class="row"> -->
+                <div class="row">
+                    <div class="col-lg-6 componentes">
+                        <form action="" method="post">   
+                            <b>AGREGAR COMPONENTES</b>
+                            <div class="row">
+                                <input type="text" class="form-control margin7" name="Nombre_componente" placeholder="NOMBRE" style="width: 95%;  margin-left:12px ;"  required>
+                            </div>
+                            <div class="row">
+                                <input type="number" class="form-control margin7" name="Concentracion_componente" placeholder="CONCENTRACION" style="width: 80%; margin-left:12px ;" required>
 
-                    <?php foreach ($Componentes_select as $Row_Componentes) {?>
+                                <select name="Medida" class="form-control" style="height: 38px; width: 15%;" required>
+                                    <option hidden selected value=""></option>
 
-                    <tr>
-                        <td><?php echo $Row_Componentes->Nombre_componente ?></td>
-                        <td><?php echo $Row_Componentes->Concentracion_componente?>% </td>
-                        <td><button type="submit" name="modify_medic" class="btn btn-dark btn-sm" value="<?php echo $Row_Componentes->id_medico ?>">AGREGAR</button></td>
-                    </tr>
+                                    <?php foreach ($Medidas_select as $Row_medidas) {?>
 
-                    <?php } ?>
-                </tbody>
-            </table><br><br>
+                                    <option value="<?php echo $Row_medidas->abreviatura_medida ?>"><?php echo $Row_medidas->abreviatura_medida; ?></option>
+
+                                     <?php  } ?>
+                                </select>
+                            </div>
+
+                            <button type="submit" id="submit" name="Submit_new_compo" class="btn btn-dark btn-sm margin7" style="width: 55px; height: 30px; font-size: 9px ;">GUARDAR</button>                    
+                        </form>
+                    </div>
+                <!-- </div> -->
+            </div>
+
         </div>
     </center>
-</form>
-
-
-
-<?php 
-include ('includes/nullrefresh.php');
-// if (isset($_POST['modify_medic'])) {
-
-//     $modify_medic = isset($_POST['modify_medic']) ? $_POST['modify_medic'] : "";
-//     $_SESSION['mededit']=$modify_medic;
-//     $_SESSION['rute']='Forms/EditaMedicos.php';
-//     ?> 
-<!-- //     <script>location. reload()</script> -->
-     <?php 
-
-
-// }
-
-?> 
+</div>

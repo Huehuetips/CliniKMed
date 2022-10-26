@@ -4,10 +4,10 @@
     // echo $Medico;
     require_once "models\Select.model.php";
 
-    $especialidades_input =Select::Sel_mast_table("SelEsp", "","");
-    $sexo_input = Select::Sel_mast_table("SelSex", "","");
+    $especialidades_input =Select::Sel_especialidades("Sel");
+    $sexo_input = Select::Sel_sexo("Sel");
 
-    $Info_medic =Select::Sel_edit("MedWhe", "$Medico","");
+    $Info_medic =Select::Sel_med_where("Whe", "$Medico","");
 
     if ($Info_medic[0]->Activo_medico=1) {
     	$Activo_edit_med="Si";
@@ -18,8 +18,8 @@
  	$Sexo_medico = $Info_medic[0]->Sexo_medico;
  	$Especialidad_med = $Info_medic[0]->Id_especialidad;
 
-    $Sex_edit_med =Select::Sel_edit("SexWhe", "$Sexo_medico","");
-    $Esp_edit_med =Select::Sel_edit("EspWhe", "$Especialidad_med","");
+    $Sex_edit_med =Select::Sel_sex_where("Whe", "$Sexo_medico");
+    $Esp_edit_med =Select::Sel_esp_where("Whe", "$Especialidad_med");
 
 
  ?>
@@ -37,7 +37,7 @@
                     <div class="col-lg-6">
                         <div style="margin: 10px;">
                             *<b>NOMBRE</b><br>
-                            <input type="text" class="form-control" name="Nombre_medico" maxlength="50" value="<?php echo $Info_medic[0]->Nombre_medico; ?>" disabled="true" required>
+                            <input type="text" class="form-control" name="Nombre_medico" maxlength="50" value="<?php echo $Info_medic[0]->Nombre_medico; ?>"required>
                         </div>
                     </div><br>
                     <div class="col-lg-6">
@@ -61,7 +61,7 @@
 
 
                             <b>ESPECIALIDAD</b> <br>
-                            <select name="Id_especialidad" class="form-control" style="height: 38px;" disabled="true" required>
+                            <select name="Id_especialidad" class="form-control" style="height: 38px;" required>
                                 <option hidden selected value="<?php echo $Especialidad_med;?>"><?php echo $Esp_edit_med[0]->Nombre_especialidad ?></option>
 
                                 <?php foreach ($especialidades_input as $Row_especialidades) {?>
@@ -176,10 +176,7 @@ if (isset($_POST['Submit_ins_med'])) {
     require_once "models/Update.model.php";
 
     $response =Update_model::Update_med($Id_especialidad, $Razon_social_medico, $Activo_medico, $Nombre_medico, $Email_medico, $Colegiado_medico, $Direccion_medico, $Sexo_medico, $Telefono_medico, $Id_medico);
-
-    if ($response==true) {
-        echo '<script>', 'alert("El registro ha sido actualizado con éxito");', '</script>';
-    }
+    ?> <script>location. reload()</script><?php 
 
 
     return;

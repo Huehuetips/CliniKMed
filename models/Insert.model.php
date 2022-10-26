@@ -9,7 +9,7 @@ class Ins_model {
 
     static public function Ins_med( $Id_especialidad, $Razon_social_medico, $Activo_medico, $Nombre_medico, $Email_medico, $Colegiado_medico, $Direccion_medico, $Sexo_medico, $Telefono_medico ) {
 
-        $sql = "execute SpCreaMedicos 'InMed',$Id_especialidad,'$Razon_social_medico',$Activo_medico,'$Nombre_medico','$Email_medico',$Colegiado_medico,'$Direccion_medico',$Telefono_medico,'$Sexo_medico'";
+        $sql = "execute SpMedicos 'Ins',$Id_especialidad,'$Razon_social_medico',$Activo_medico,'$Nombre_medico','$Email_medico',$Colegiado_medico,'$Direccion_medico',$Telefono_medico,'$Sexo_medico'";
 
         $stmt = Connection::connect()->prepare( $sql );
 
@@ -63,9 +63,26 @@ class Ins_model {
 
 
 
-    static public function Ins_com($Nombre_formula,$Componente_formula) {
+    static public function Ins_compo($Componente, $Concentración,$Medida) {
 
-        $sql = "execute SpPresentaciones 'InsTPre', '$Nombre_formula',$Componente_formula";
+        $sql = "execute SpComponentes 'Ins', '$Componente',$Concentración,'$Medida'";
+
+        $stmt = Connection::connect()->prepare( $sql );
+
+        $stmt -> execute ();
+
+        $return = $stmt;
+        
+        $stmt = null;
+
+        return $return;
+    }
+
+
+
+    static public function Ins_form($Nombre) {
+
+        $sql = "execute SpFormulas 'InsForm', '$Nombre'";
 
         $stmt = Connection::connect()->prepare( $sql );
 

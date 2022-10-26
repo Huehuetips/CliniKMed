@@ -2,8 +2,8 @@
 
 <?php
     require_once "models\Select.model.php";
-    $especialidades_input =Select::Sel_mast_table("SelEsp", "","");
-    $sexo_input = Select::Sel_mast_table("SelSex", "","");
+    $especialidades_input =Select::Sel_especialidades("Sel");
+    $sexo_input = Select::Sel_sexo("Sel");
 
 ?>
 
@@ -100,7 +100,7 @@
                 </div><br><br>
                 <div class="row">
                     <center>
-                        <button type="submit" id="submit" name="Submit_ins_med" class="btn btn-dark btn-sm" style="width: 90px; height: 45px;">GUARDAR</button>
+                        <button type="submit" id="submit" name="Submit_ins_med" class="btn btn-dark btn-sm button">GUARDAR</button>
                     </center>
                 </div>
                 <br> 
@@ -154,10 +154,6 @@ if (isset($_POST['Submit_ins_med'])) {
     require_once "models/Insert.model.php";
 
     $response =Ins_model::Ins_med($Id_especialidad, $Razon_social_medico, $Activo_medico, $Nombre_medico, $Email_medico, $Colegiado_medico, $Direccion_medico, $Sexo_medico, $Telefono_medico);
-
-    if ($response==true) {
-        echo '<script>', 'alert("El registro ha sido ingresado con éxito");', '</script>';
-    }
 
 
     return;

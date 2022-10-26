@@ -38,3 +38,66 @@ Stack trace:
 #0 C:\xampp\htdocs\CliniKMed\index.php(31): include_once()
 #1 {main}
   thrown in C:\xampp\htdocs\CliniKMed\Forms\EditaMedicos.php on line 178
+[26-Oct-2022 00:02:36 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Could not find stored procedure 'SpCreaMedicos'. in C:\xampp\htdocs\CliniKMed\models\Insert.model.php:16
+Stack trace:
+#0 C:\xampp\htdocs\CliniKMed\models\Insert.model.php(16): PDOStatement->execute()
+#1 C:\xampp\htdocs\CliniKMed\Forms\InsertMedicos.php(156): Ins_model::Ins_med('2', 'No lo se', 1, 'Juancho perez ', 'asldkjf@gmail.c...', '065489', 'a\xC3\xB1ksdjfhlksdhj...', 'M ', '15687896')
+#2 C:\xampp\htdocs\CliniKMed\index.php(31): include_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\CliniKMed\models\Insert.model.php on line 16
+[26-Oct-2022 00:23:38 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near ','. in C:\xampp\htdocs\CliniKMed\models\Update.model.php:16
+Stack trace:
+#0 C:\xampp\htdocs\CliniKMed\models\Update.model.php(16): PDOStatement->execute()
+#1 C:\xampp\htdocs\CliniKMed\Forms\EditaMedicos.php(178): Update_model::Update_med('', 'a\xC3\xB1sldkfj\xC3\xB1sdlk...', '1', '', 'asldkjf@gmail.c...', '6165', 'probando insert...', 'F', '321586548', '7301')
+#2 C:\xampp\htdocs\CliniKMed\index.php(31): include_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\CliniKMed\models\Update.model.php on line 16
+[26-Oct-2022 00:28:12 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near ','. in C:\xampp\htdocs\CliniKMed\models\Update.model.php:16
+Stack trace:
+#0 C:\xampp\htdocs\CliniKMed\models\Update.model.php(16): PDOStatement->execute()
+#1 C:\xampp\htdocs\CliniKMed\Forms\EditaMedicos.php(178): Update_model::Update_med('', 'a\xC3\xB1sldkfj\xC3\xB1sdlk...', '1', '', 'asldkjf@gmail.c...', '6165', 'probando update', 'F', '321586548', '7301')
+#2 C:\xampp\htdocs\CliniKMed\index.php(31): include_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\CliniKMed\models\Update.model.php on line 16
+[26-Oct-2022 00:29:26 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near ','. in C:\xampp\htdocs\CliniKMed\models\Update.model.php:16
+Stack trace:
+#0 C:\xampp\htdocs\CliniKMed\models\Update.model.php(16): PDOStatement->execute()
+#1 C:\xampp\htdocs\CliniKMed\Forms\EditaMedicos.php(178): Update_model::Update_med('', 'a\xC3\xB1sldkfj\xC3\xB1sdlk...', '1', '', 'asldkjf@gmail.c...', '6165', 'probando update', 'F', '321586548', '7301')
+#2 C:\xampp\htdocs\CliniKMed\index.php(31): include_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\CliniKMed\models\Update.model.php on line 16
+[26-Oct-2022 00:30:05 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near ','. in C:\xampp\htdocs\CliniKMed\models\Update.model.php:17
+Stack trace:
+#0 C:\xampp\htdocs\CliniKMed\models\Update.model.php(17): PDOStatement->execute()
+#1 C:\xampp\htdocs\CliniKMed\Forms\EditaMedicos.php(178): Update_model::Update_med('', 'a\xC3\xB1sldkfj\xC3\xB1sdlk...', '1', '', 'asldkjf@gmail.c...', '6165', 'probando update', 'F', '321586548', '7301')
+#2 C:\xampp\htdocs\CliniKMed\index.php(31): include_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\CliniKMed\models\Update.model.php on line 17
+[26-Oct-2022 00:32:43 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near ','. in C:\xampp\htdocs\CliniKMed\models\Update.model.php:17
+Stack trace:
+#0 C:\xampp\htdocs\CliniKMed\models\Update.model.php(17): PDOStatement->execute()
+#1 C:\xampp\htdocs\CliniKMed\Forms\EditaMedicos.php(179): Update_model::Update_med('', 'a\xC3\xB1sldkfj\xC3\xB1sdlk...', '1', '', 'asldkjf@gmail.c...', '6165', 'probando update', 'F', '321586548', '7301')
+#2 C:\xampp\htdocs\CliniKMed\index.php(31): include_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\CliniKMed\models\Update.model.php on line 17
+[26-Oct-2022 00:33:25 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near ','. in C:\xampp\htdocs\CliniKMed\models\Update.model.php:17
+Stack trace:
+#0 C:\xampp\htdocs\CliniKMed\models\Update.model.php(17): PDOStatement->execute()
+#1 C:\xampp\htdocs\CliniKMed\Forms\EditaMedicos.php(180): Update_model::Update_med('', 'a\xC3\xB1sldkfj\xC3\xB1sdlk...', '1', '', 'asldkjf@gmail.c...', '6165', 'nueva casa', 'F', '321586548', '7301')
+#2 C:\xampp\htdocs\CliniKMed\index.php(31): include_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\CliniKMed\models\Update.model.php on line 17
+[26-Oct-2022 00:34:43 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near ','. in C:\xampp\htdocs\CliniKMed\models\Update.model.php:17
+Stack trace:
+#0 C:\xampp\htdocs\CliniKMed\models\Update.model.php(17): PDOStatement->execute()
+#1 C:\xampp\htdocs\CliniKMed\Forms\EditaMedicos.php(180): Update_model::Update_med('', 'a\xC3\xB1sldkfj\xC3\xB1sdlk...', '1', '', 'asldkjf@gmail.c...', '6165', 'nueva casa', 'F', '321586548', '7301')
+#2 C:\xampp\htdocs\CliniKMed\index.php(31): include_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\CliniKMed\models\Update.model.php on line 17
+[26-Oct-2022 00:35:52 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near ','. in C:\xampp\htdocs\CliniKMed\models\Update.model.php:17
+Stack trace:
+#0 C:\xampp\htdocs\CliniKMed\models\Update.model.php(17): PDOStatement->execute()
+#1 C:\xampp\htdocs\CliniKMed\Forms\EditaMedicos.php(180): Update_model::Update_med('', 'a\xC3\xB1sldkfj\xC3\xB1sdlk...', '1', '', 'asldkjf@gmail.c...', '6165', 'nueva casa', 'F', '321586548', '7301')
+#2 C:\xampp\htdocs\CliniKMed\index.php(31): include_once('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\CliniKMed\models\Update.model.php on line 17

@@ -86,8 +86,8 @@ if (isset($_POST['Submit_ins_lab'])) {
 
     $response =Ins_model::Ins_lab($Nombre_laboratorio,$Telefono_laboratorio,$Contacto_laboratorio,$Email_laboratorio,$Direccion_laboratorio);
 
-    if ($response==true) {
-        echo '<script>', 'alert("El registro ha sido ingresado con éxito");', '</script>';
+    if ($response!=true) {
+        echo '<script>', 'alert("Error al ingresar el registro");', '</script>';
     }
 
 
