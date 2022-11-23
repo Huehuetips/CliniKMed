@@ -1748,7 +1748,7 @@ progress {
   --bs-table-active-color: var(--bs-body-color);
   --bs-table-active-bg: rgba(0, 0, 0, 0.1);
   --bs-table-hover-color: var(--bs-body-color);
-  --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+  --bs-table-hover-bg: rgba(0, 0, 0, 0.20);
   width: 100%;
   margin-bottom: 1rem;
   color: var(--bs-table-color);
@@ -1778,6 +1778,9 @@ progress {
 
 .table-sm > :not(caption) > * > * {
   padding: 0.25rem 0.25rem;
+}
+.table-xsm > :not(caption) > * > * {
+  padding: 0rem 0rem;
 }
 
 .table-bordered > :not(caption) > * {

@@ -10,7 +10,7 @@ body{
 	background-image: url(../imgs/FONDO.JPG);
 	background-size: 750px 700px;
 	min-height: 100vh;
-	padding: 90px 20px 0;
+	padding: 100px 20px 0;
 }
 
 /*FORMULARIOS*/
@@ -29,6 +29,15 @@ body{
 	height: 45px;
 }
 
+.formulas{
+	display: flex;
+}
+
+.formulas>div{
+	width: 50%;
+	border-right: 1px outset;
+}
+
 /*FORMULARIO DE LOGIN*/
 #login{
 	background-color: lightgrey; 
@@ -42,11 +51,8 @@ body{
 
 /*LOGO*/
 #Logo{
-	/*font-size: 30px;*/
 	height: 80px;
 	width: 150px;
-	/*font-weight: bold;*/
-	/*padding: 0 40px;*/
 
 }
 
@@ -151,17 +157,52 @@ body{
 	display: none;
 }
 
+.overlay{
+	background: rgba(0, 0, 0, .5);
+	position: fixed;
+	top: 0px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	visibility: hidden;
+}
+.Form-popup{
+	background: linear-gradient(to top, rgb(115, 115, 115) 10%, lightgrey);
+	margin: auto auto;
+	width: 350px;
+	max-width: 1000px;
+	padding: 4.5em 3 em;
+	border-radius: 15px;
+	box-shadow: 0 20px 40px -5px rgb(0, 0, 0,60%);
+	text-align: center;
 
-/*
-.fila{
-	background-color:#ffffcc;
+
+
 }
-.filaalterna{
-	background-color:#ffcc99;
+.overlay.active{
+	visibility: visible;
 }
-.fdg_sortable {
-	cursor:pointer;text-decoration:underline;color:#00c;
-}*/
+
+
+.btn-cerrar-popup{
+	background: none;
+	border: none;
+	font-size: 17px;
+	display: block;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -214,5 +255,11 @@ body{
 		padding: 20px 0;
 
 	}
-
+	.formulas{
+		display: block;
+		width: 100%;
+	}
+	.formulas>div{
+		width: 100%;
+	}
 }

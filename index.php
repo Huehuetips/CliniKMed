@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script src="https://kit.fontawesome.com/6a50c4176b.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="Styles/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="Styles/CSSCLINIK.css">

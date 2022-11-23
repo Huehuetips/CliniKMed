@@ -176,7 +176,7 @@ if (isset($_POST['Submit_ins_med'])) {
     require_once "models/Update.model.php";
 
     $response =Update_model::Update_med($Id_especialidad, $Razon_social_medico, $Activo_medico, $Nombre_medico, $Email_medico, $Colegiado_medico, $Direccion_medico, $Sexo_medico, $Telefono_medico, $Id_medico);
-    ?> <script>location. reload()</script><?php 
+        include_once "includes /Recargar.php"; 
 
 
     return;
